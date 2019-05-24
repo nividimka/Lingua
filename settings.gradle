@@ -1,0 +1,1 @@
+include ':app', ':auth_api', ':auth_firebase_impl', ':core'
