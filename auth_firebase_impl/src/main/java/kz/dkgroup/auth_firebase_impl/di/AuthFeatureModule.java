@@ -22,10 +22,10 @@ public abstract class AuthFeatureModule {
 
     @Feature
     @Binds
-    public abstract AuthStarter provideScannerStarter(FirebaseAuthStarterImpl scannerStarter);
+    public abstract AuthStarter provideAuthStarter(FirebaseAuthStarterImpl scannerStarter);
 
    @Feature
     @Binds
-    public abstract AuthChecker provideScannerStarter(FirebaseAuthCheckerImpl scannerStarter);
+    public abstract AuthChecker provideAuthChecker(FirebaseAuthCheckerImpl scannerStarter);
 
 }

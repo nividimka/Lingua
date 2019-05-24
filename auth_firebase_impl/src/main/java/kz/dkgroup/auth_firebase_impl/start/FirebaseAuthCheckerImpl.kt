@@ -4,8 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
 import kz.dkgroup.auth_api.AuthChecker
+import javax.inject.Inject
 
-class FirebaseAuthCheckerImpl : AuthChecker {
+class FirebaseAuthCheckerImpl @Inject constructor(): AuthChecker {
     override fun isAuthorized(): LiveData<Boolean> {
         return MutableLiveData()
     }
