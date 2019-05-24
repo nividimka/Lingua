@@ -7,7 +7,7 @@ plugins{
 }
 play {
     track = 'internal' // or alpha or beta...
-    serviceAccountCredentials = file(System.getenv("PRIVATE_KEY"))
+    serviceAccountCredentials = file(System.getenv("PRIVATE_KEY") ?: "private_key.json")
     defaultToAppBundles = true // Use App Bundle instead of APK
     resolutionStrategy = "ignore" //If the deployment fails due to an API error, don't fail the CI Build
 }
@@ -31,7 +31,7 @@ android {
     }
     signingConfigs{
         release {
-            storeFile file(System.getenv("KEYSTORE"))
+            storeFile file(System.getenv("KEYSTORE") ?: "dkgroup.jks")
             storePassword System.getenv("KEYSTORE_PASSWORD")
             keyAlias System.getenv("KEY_ALIAS")
             keyPassword System.getenv("KEYSTORE_PASSWORD")
