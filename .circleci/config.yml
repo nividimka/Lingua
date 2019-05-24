@@ -18,8 +18,8 @@ jobs:
           command: sudo chmod +x ./gradlew
       - run: echo $ENCODED_KEYSTORE | base64 --decode >> ${HOME}/dkgroup.jks
       - run: echo ‘export KEYSTORE=${HOME}/dkgroup.jks’ >> $BASH_ENV
-      - run: echo $DEPLOYMENT_PRIVATE_KEY | base64 --decode >> ${HOME}/private_key.json
-      - run: echo ‘export PRIVATE_KEY=${HOME}/private_key.json’ >> $BASH_ENV
+      - run: echo $DEPLOYMENT_PRIVATE_KEY | base64 --decode >> ${HOME}/app/private_key.json
+      - run: echo ‘export PRIVATE_KEY=${HOME}/app/private_key.json’ >> $BASH_ENV
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
